@@ -24,15 +24,19 @@ jobs:
           pip3 list
       - name: shellcheck
         run: |
-          shellcheck
+          shellcheck --help
       - name: wget
         run: |
           wget --help
       - name: docker
         run: |
           docker ps
-      - name: yq # fails since the binary downloaded is amd64
+      - name: failures:
         run: |
-          touch yq.yaml
-          yq -i '.a.b[0].c = "cool"' yq.yaml
-          cat yq.yaml
+          echo "yq and aproxy no arm"
+      # - name: yq # fails since the binary downloaded is amd64
+      #   run: |
+      #     touch yq.yaml
+      #     yq -i '.a.b[0].c = "cool"' yq.yaml
+      #     cat yq.yaml
+      # - name: aproxy # fails, no arm build on snap
