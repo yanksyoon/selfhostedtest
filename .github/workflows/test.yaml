@@ -31,7 +31,7 @@ jobs:
       - name: docker
         run: |
           docker ps
-      - name: failures:
+      - name: failures
         run: |
           echo "yq and aproxy no arm"
       # - name: yq # fails since the binary downloaded is amd64
