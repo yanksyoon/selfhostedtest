@@ -13,6 +13,24 @@ jobs:
         run: |
           touch jq.yaml
           curl 'https://api.github.com/repos/jqlang/jq/commits?per_page=5' | jq '.[0]'
+      - name: npm
+        run: |
+          npm help
+      - name: yarn
+        run: |
+          yarn help
+      - name: pip
+        run: |
+          pip3 list
+      - name: shellcheck
+        run: |
+          shellcheck
+      - name: wget
+        run: |
+          wget --help
+      - name: docker
+        run: |
+          docker ps
       - name: yq # fails since the binary downloaded is amd64
         run: |
           touch yq.yaml
