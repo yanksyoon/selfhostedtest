@@ -52,4 +52,4 @@ jobs:
       - name: aproxy
         if: always()
         run: |
-          /snap/aproxy/current/bin/aproxy
+          /snap/aproxy/current/bin/aproxy --help
