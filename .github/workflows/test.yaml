@@ -53,4 +53,3 @@ jobs:
         if: always()
         run: |
           /snap/aproxy/current/bin/aproxy
-          snap set aproxy proxy=http://hello.internal listen=:54969
