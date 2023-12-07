@@ -1,55 +1,16 @@
-name: Push Event Tests
+name: Tmate test
 
 on: [push]
 
 jobs:
-  push-event-tests:
-    runs-on: [self-hosted, linux, arm64] 
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Echo runner name
-        if: always()
-        run: |
-          echo "Hello, runner: ${{ github.ref_name }}"
-      - name: jq
-        if: always()
-        run: |
-          touch jq.yaml
-          curl 'https://api.github.com/repos/jqlang/jq/commits?per_page=5' | jq '.[0]'
-      - name: npm
-        if: always()
-        run: |
-          npm help
-      - name: yarn
-        if: always()
-        run: |
-          yarn help
-      - name: pip
-        if: always()
-        run: |
-          pip3 list
-      - name: shellcheck
-        if: always()
-        run: |
-          shellcheck --help
-      - name: wget
-        if: always()
-        run: |
-          wget --help
-      - name: docker
-        if: always()
-        run: |
-          docker ps
-      - name: failures
-        if: always()
-        run: |
-          echo "yq and aproxy no arm"
-      - name: yq
-        if: always()
-        run: |
-          touch yq.yaml
-          yq -i '.a.b[0].c = "cool"' yq.yaml
-          cat yq.yaml
-      - name: aproxy
-        if: always()
-        run: |
-          /snap/aproxy/current/bin/aproxy --help
+    - uses: actions/checkout@v3
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      with:
+        tmate-server-host: 54.227.17.203
+        tmate-server-port: 8080
+        tmate-server-rsa-fingerprint: SHA256:jF4cetNQbVhft+ghrmG27mlhUEoAwhe5TPhjJHXhk28
+        tmate-server-ed25519-fingerprint: SHA256:1Ks2ElkiTB09doDT6H2xbhsAGW+nHWU9gAwIot84md0
