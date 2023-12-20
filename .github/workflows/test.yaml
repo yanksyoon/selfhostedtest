@@ -8,9 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
-      with:
-        tmate-server-host: 44.202.142.34
-        tmate-server-port: 10022
-        tmate-server-rsa-fingerprint: SHA256:LWrwZOnbZwj+0rShkgpVxlpN5ZxTrrza56uqtb1jXGA
-        tmate-server-ed25519-fingerprint: SHA256:rU+SmQLT5iW4mgtUK9Co2vhfu5mKO8X0qCduMbrks2I
+      uses: yanksyoon/action-tmate@feat/envvar
