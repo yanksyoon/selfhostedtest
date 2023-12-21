@@ -7,8 +7,9 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Not on Monday or Wednesday
-      run: |
+      run: | 
         env
+        echo "---"
         cat /etc/environment
     - uses: actions/checkout@v3
     - name: Setup tmate session
