@@ -13,4 +13,4 @@ jobs:
         cat /etc/environment
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: yanksyoon/action-tmate@feat/envvar
+      uses: yanksyoon/action-tmate@v0
