@@ -6,6 +6,10 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+    - name: Not on Monday or Wednesday
+      run: |
+        env
+        cat /etc/environment
     - uses: actions/checkout@v3
     - name: Setup tmate session
       uses: yanksyoon/action-tmate@feat/envvar
