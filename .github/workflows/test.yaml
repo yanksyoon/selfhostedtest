@@ -13,7 +13,7 @@ jobs:
         cat /etc/environment
     - uses: actions/checkout@v3
     - name: Setup tmate session
-      uses: canonical/action-tmate
+      uses: canonical/action-tmate@master
       with:
         tmate-server-host: 10.159.212.149
         tmate-server-port: 10022
