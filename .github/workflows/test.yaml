@@ -14,8 +14,3 @@ jobs:
     - uses: actions/checkout@v3
     - name: Setup tmate session
       uses: canonical/action-tmate@master
-      with:
-        tmate-server-host: 10.159.212.149
-        tmate-server-port: 10022
-        tmate-server-rsa-fingerprint: SHA256:Yai0sXe2P6IUFkfySeKl4rmDWFTL+Q/AC6TRmR/n+rs
-        tmate-server-ed25519-fingerprint: SHA256:8UgWbNZcBNFNRIESxgJyedNQJ8WJzS+L8/rSli3lDGQ
