@@ -16,6 +16,7 @@ client = Github(ns.token)
 repo: Repository = client.get_repo("yanksyoon/selfhostedtest")
 
 test_branch = f"test/{secrets.token_hex(4)}"
+print(Repo().head.commit.hexsha, f"refs/heads/{test_branch}")
 branch_ref = repo.create_git_ref(
     ref=f"refs/heads/{test_branch}", sha=Repo().head.commit.hexsha
 )
