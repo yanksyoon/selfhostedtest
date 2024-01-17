@@ -10,6 +10,7 @@ on:
 
 jobs:
   workflow-dispatch-tests:
+    runs-on: ["ubuntu-latest"]
     steps:
     - name: Print
       run: |
