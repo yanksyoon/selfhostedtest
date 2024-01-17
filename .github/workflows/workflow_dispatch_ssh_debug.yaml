@@ -1,0 +1,16 @@
+name: Workflow Dispatch Tests (ssh-debug/tmate)
+
+on:
+  # Manually dispatched workflow action
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: 'Self hosted gh runner'
+        required: true
+
+jobs:
+  workflow-dispatch-tests:
+    steps:
+    - name: Print
+      run: |
+        echo ${{ inputs.runner }}
