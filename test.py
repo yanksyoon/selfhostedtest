@@ -38,6 +38,8 @@ while not get_branch():
     time.sleep(5)
 
 branch = get_branch()
+for workflow in repo.get_workflows():
+    print(workflow)
 workflow = repo.get_workflow("workflow_dispatch_ssh_debug.yaml")
 assert workflow.create_dispatch(
     branch, inputs={"runner": "hello world"}
