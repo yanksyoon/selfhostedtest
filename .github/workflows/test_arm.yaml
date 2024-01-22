@@ -6,7 +6,6 @@ on:
 jobs:
   arm-test:
     name: Arm test
-    needs: [build-charm, run-id]
     runs-on: [self-hosted]
     steps:
       # Snapd can have some issues in privileged LXD containers without setting
