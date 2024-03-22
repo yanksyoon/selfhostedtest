@@ -7,7 +7,7 @@ on:
 
 jobs:
   github-test:
-    runs-on: [ubuntu-latest, self-hosted]
+    runs-on: [self-hosted]
     steps:
       - run: sudo apt-get update
       - run: time sudo docker pull github-runner-dockerhub-cache.canonical.com:5000/jujusolutions/charm-base
