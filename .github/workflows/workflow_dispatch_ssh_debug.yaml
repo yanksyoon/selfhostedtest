@@ -10,5 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get update
-      - run: sudo apt install -y docker.io
       - run: time sudo docker pull github-runner-dockerhub-cache.canonical.com:5000/jujusolutions/charm-base
