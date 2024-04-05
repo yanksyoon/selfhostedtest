@@ -1,17 +1,11 @@
 name: Workflow Dispatch Tests (ssh-debug/tmate)
 
-on:
-  # Manually dispatched workflow action
-  workflow_dispatch:
-    inputs:
-      runner:
-        description: 'Self hosted gh runner'
-        required: true
+on: [push]
 
 jobs:
   workflow-dispatch-tests:
-    runs-on: ["ubuntu-latest"]
+    runs-on: ["self-hosted"]
     steps:
     - name: Print
       run: |
-        echo ${{ inputs.runner }}
+        echo Hello world
