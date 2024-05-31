@@ -9,3 +9,5 @@ jobs:
     - name: Print
       run: |
         echo Hello world!
+        sleep 10
+        echo "done"
