@@ -8,4 +8,4 @@ jobs:
     steps:
     - name: Print
       run: |
-        echo Hello world
+        echo Hello world!
