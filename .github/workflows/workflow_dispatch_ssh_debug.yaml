@@ -1,9 +1,9 @@
 name: Workflow Dispatch Tests (ssh-debug/tmate)
 
-on: [push]
+on: push
 
 jobs:
-  workflow-dispatch-tests:
+  hello:
     runs-on: ["self-hosted"]
     steps:
     - name: Print
