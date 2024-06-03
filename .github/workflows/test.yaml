@@ -1,0 +1,11 @@
+name: Workflow Dispatch Tests (ssh-debug/tmate)
+
+on: push
+
+jobs:
+  hello:
+    steps:
+    - name: Print
+      run: |
+        ls -lah /usr/local/
+        ls -lah /usr/local/bin/
