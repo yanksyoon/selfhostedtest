@@ -1,4 +1,4 @@
-name: Workflow Dispatch Tests (ssh-debug/tmate)
+name: Ubuntu test
 
 on: push
 
