@@ -3,10 +3,9 @@ name: Ubuntu test
 on: push
 
 jobs:
-  hello:
-    runs-on: ["ubuntu-latest"]
+  build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Print
-      run: |
-        ls -lah /usr/local/
-        ls -lah /usr/local/bin/
+      - uses: actions/checkout@v4
+      - name: Run script
+        run: bash -xe script.sh
