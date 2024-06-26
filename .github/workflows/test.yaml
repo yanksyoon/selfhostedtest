@@ -9,3 +9,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run script
         run: bash -xe script.sh
+        env:
+          TEST_SECRET: ${{ secrets.TEST_SECRET }}
