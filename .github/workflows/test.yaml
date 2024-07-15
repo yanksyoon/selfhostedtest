@@ -8,6 +8,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run script
-        run: bash -xe script.sh
-        env:
-          TEST_SECRET: ${{ secrets.TEST_SECRET }}
+        run: |
+          apt-mark showmanual | sort > manually-installed.txt
+          apt show $(apt-mark showmanual) 2>/dev/null | 
+          grep -e ^Depends -e ^Pre-Depends > deps1.txt
+          cat deps1.txt | 
+          sed 's/^Depends: //; s/^Pre-Depends: //; 
+              s/(.*)//g; s/:any//g' > deps2.txt
+          cat deps2.txt | tr -d ',|' | tr ' ' '\n' | grep -v ^$ |
+          sort -u > all-dep-packages.txt
+          grep -v -F -f all-dep-packages.txt manually-installed.txt
+          cat manually-installed.txt
