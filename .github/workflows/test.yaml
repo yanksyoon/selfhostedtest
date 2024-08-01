@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Run script
         run: |
-          echo "run"
+          echo "run2"
