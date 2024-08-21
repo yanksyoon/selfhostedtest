@@ -4,9 +4,9 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - name: Run script
         run: |
-          apt-cache rdepends build-essential
+          sleep 180
