@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: Run script
         run: |
-          groups
+          sleep 600
